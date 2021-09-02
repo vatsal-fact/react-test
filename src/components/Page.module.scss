@@ -1,0 +1,38 @@
+@import "../theme.scss";
+
+.Page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+.Main {
+    flex: 1 0 auto;
+    padding: $spacing * 2 + 56px $spacing $spacing * 2 $spacing;
+    max-width: 1200px;
+    width: calc(100% - (#{$spacing} * 2));
+    margin: 0 auto;
+}
+
+.VerticalCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.Inverse {
+    background-color: $color-paper-inverse;
+    color: $color-text-inverse;
+}
+
+.Table {
+    background-color: #fff;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
