@@ -7,7 +7,12 @@ import Page from "../components/Page";
 import Login from "./Login";
 import Logout from "./Logout";
 import Welcome from "./Welcome";
-import Home from "./Home";
+import Dashboard2 from "./MaturityDashboard";
+import Dashboard1 from "./ExecutiveDashboard";
+import Email from "./Email";
+import Sms from "./Sms";
+import Home2 from "./Home2";
+// import Home3 from "./Home3";
 
 import styles from "./AppRouter.module.scss";
 
@@ -26,11 +31,17 @@ const AppRouter = () => {
             <Router>
                 {/* WorkspaceProvider depends on Router so it must be nested */}
                 <WorkspaceProvider>
-                    <Route exact path="/" component={Home} />
                     <Route exact path="/welcome" component={Welcome} />
+                    <Route exact path="/" component={Welcome} />
                     <Route exact path="/dashboard" component={() => <Page>Dashboard</Page>} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/logout" component={Logout} />
+                    <Route exact path="/dashboard/executive" component={Dashboard1} />
+                    <Route exact path="/dashboard/maturity" component={Dashboard2} />
+                    <Route exact path="/cohort/email" component={Email} />
+                    <Route exact path="/cohort/sms" component={Sms} />
+                    <Route exact path="/test" component={Home2} />
+                    {/* <Route exact path="/test1" component={Home3} /> */}
                     {/* Uncomment the next line if you want to redirect unauthorized users to login form */}
                     {/* <RedirectIfNotLoggedIn /> */}
                 </WorkspaceProvider>

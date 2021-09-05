@@ -7,15 +7,44 @@ import styles from "./Header.module.scss";
 const Links = () => {
     return (
         <>
-            <NavLink
+            {/* <NavLink
                 to="/welcome"
                 className={cx(styles.Link, "s-welcome-link")}
                 activeClassName={styles.LinkActive}
             >
                 Welcome
+            </NavLink> */}
+            <NavLink
+                to={"/dashboard/executive"}
+                className={styles.Link}
+                activeClassName={styles.LinkActive}
+                exact
+            >
+                Fan Maturity Model - I
             </NavLink>
-            <NavLink to={"/"} className={styles.Link} activeClassName={styles.LinkActive} exact>
-                Home
+            <NavLink
+                to={"/dashboard/maturity"}
+                className={styles.Link}
+                activeClassName={styles.LinkActive}
+                exact
+            >
+                Fan Maturity Model - II
+            </NavLink>
+            <NavLink
+                to={"/cohort/email"}
+                className={styles.Link}
+                activeClassName={styles.LinkActive}
+                exact
+            >
+                Email
+            </NavLink>
+            <NavLink
+                to={"/cohort/sms"}
+                className={styles.Link}
+                activeClassName={styles.LinkActive}
+                exact
+            >
+                Sms
             </NavLink>
         </>
     );

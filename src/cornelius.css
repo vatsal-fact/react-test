@@ -1,0 +1,168 @@
+.cornelius-container {
+    font-family: Helvetica;
+    /* padding: 20px 0; */
+}
+
+.cornelius-title {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 14pt;
+    color: #3a3838;
+}
+
+.cornelius-table {
+    font-size: 9pt;
+    margin: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0 0 10px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.18) 0 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0 0 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #f5f3f3;
+}
+
+/* fix for last cell rounded corner bug */
+.cornelius-table tr:last-child td:last-child {
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cornelius-table tr:first-child th:last-child {
+    border-right: none;
+}
+
+.cornelius-table td,
+.cornelius-table th {
+    width: 42px;
+    text-align: center;
+    padding: 10px;
+}
+
+.cornelius-table th {
+    border-bottom: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    color: #3a3838;
+    font-weight: bold;
+}
+
+.cornelius-percentage {
+    border: none;
+    color: #000;
+}
+
+.cornelius-percentage:after {
+    content: "%";
+    margin-left: 2px;
+}
+
+td.cornelius-label {
+    text-align: left;
+    width: 135px;
+}
+
+.cornelius-label,
+.cornelius-people {
+    border-bottom: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    font-weight: bold;
+    color: #3a3838;
+}
+
+.cornelius-table tr:last-child td {
+    border-bottom: none;
+}
+
+.cornelius-empty {
+    background-color: #ffffff;
+    border: none;
+}
+
+.cornelius-low {
+    background-color: #f4f8fd;
+}
+
+.cornelius-medium-low {
+    background-color: #d8e6ff;
+}
+
+.cornelius-medium {
+    background-color: #a6caff;
+}
+
+.cornelius-medium-high {
+    background-color: #8fa4f8;
+}
+
+.cornelius-high {
+    background-color: #3963dd;
+}
+
+.cornelius-hot {
+    background-color: #163ba5;
+}
+
+.cornelius-extra-hot {
+    background-color: #041d66;
+}
+
+.cornelius-medium-high,
+.cornelius-high,
+.cornelius-hot,
+.cornelius-extra-hot {
+    color: #fff;
+    -webkit-text-shadow: 1px 1px 1px black;
+    -moz-text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 1px black;
+}
+
+/* tr th:first-child,
+tr td:first-child {
+} */
+
+.cornelius-container {
+    overflow: auto;
+    height: 80vh;
+    width: 100%;
+}
+
+.cornelius-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.cornelius-container th {
+    position: sticky;
+    top: 0;
+    background: #f5f3f3;
+    z-index: 2;
+}
+
+td:first-child,
+th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #f5f3f3;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    word-break: break-all;
+    text-align: center;
+}
+td:nth-child(2),
+th:nth-child(2) {
+    position: sticky;
+    left: 120px;
+    z-index: 1;
+    background-color: #f5f3f3;
+}
+
+th:first-child,
+th:nth-child(2) {
+    z-index: 3;
+}

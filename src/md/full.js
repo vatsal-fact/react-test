@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-/* THIS FILE WAS AUTO-GENERATED USING CATALOG EXPORTER; YOU SHOULD NOT EDIT THIS FILE; GENERATE TIME: 2021-09-01T13:20:29.417Z; */
+/* THIS FILE WAS AUTO-GENERATED USING CATALOG EXPORTER; YOU SHOULD NOT EDIT THIS FILE; GENERATE TIME: 2021-09-05T14:53:02.021Z; */
 // @ts-ignore ignore unused imports here if they happen (e.g. when there is no measure in the workspace)
 import { newAttribute, newMeasure, idRef } from "@gooddata/sdk-model";
 /**
@@ -45,6 +45,12 @@ export const Action_5 = newAttribute("label.gd_email_camp_cohort.action");
  */
 
 export const CampaignId = newAttribute("label.gd_factoreal_campaign.campaignid");
+/**
+ * Attribute Title: Campaign Id
+ * Attribute ID: attr.gd_sms_campaign.campaignid
+ */
+
+export const CampaignId_1 = newAttribute("label.gd_sms_campaign.campaignid");
 /**
  * Attribute Title: Campaign Status
  * Attribute ID: attr.gd_factoreal_campaign.campaign_status
@@ -154,11 +160,35 @@ export const DayFilter_3 = newAttribute("label.gd_email_unsubscribe.day_filter")
 
 export const DayFilter_4 = newAttribute("label.gd_email_camp_cohort.day_filter");
 /**
+ * Attribute Title: Delivered
+ * Attribute ID: attr.campaign_email_day_total.delivered
+ */
+
+export const Delivered = newAttribute("label.campaign_email_day_total.delivered");
+/**
+ * Attribute Title: Delivered
+ * Attribute ID: attr.gd_factoreal_campaign.delivered
+ */
+
+export const Delivered_1 = newAttribute("label.gd_factoreal_campaign.delivered");
+/**
+ * Attribute Title: Delivered
+ * Attribute ID: attr.gd_sms_campaign.delivered
+ */
+
+export const Delivered_2 = newAttribute("label.gd_sms_campaign.delivered");
+/**
  * Attribute Title: Name
  * Attribute ID: attr.gd_factoreal_campaign.name
  */
 
 export const Name = newAttribute("label.gd_factoreal_campaign.name");
+/**
+ * Attribute Title: Name
+ * Attribute ID: attr.gd_sms_campaign.name
+ */
+
+export const Name_1 = newAttribute("label.gd_sms_campaign.name");
 /**
  * Attribute Title: Order Id
  * Attribute ID: attr.v_fan_store_order.orderid
@@ -177,6 +207,18 @@ export const OrderId_1 = newAttribute("label.v_fan_store_product.orderid");
  */
 
 export const Param = newAttribute("label.v_fan_email_sms.param");
+/**
+ * Attribute Title: Sent
+ * Attribute ID: attr.gd_sms_campaign.sent
+ */
+
+export const Sent = newAttribute("label.gd_sms_campaign.sent");
+/**
+ * Attribute Title: Status
+ * Attribute ID: attr.gd_sms_campaign.status
+ */
+
+export const Status = newAttribute("label.gd_sms_campaign.status");
 /**
  * Attribute Title: T Order
  * Attribute ID: attr.v_fan_types.torder
@@ -282,20 +324,6 @@ export const FanSMS = newMeasure(idRef("aav8xdaGcy3M", "measure"));
  */
 
 export const Open = newMeasure(idRef("aaQtrQ4vcgmZ", "measure"));
-/**
- * Metric Title: Open2
- * Metric ID: abPtqkmocSJH
- * Metric Type: MAQL Metric
- */
-
-export const Open2 = newMeasure(idRef("abPtqkmocSJH", "measure"));
-/**
- * Metric Title: Open3
- * Metric ID: ac3s94vvc0JT
- * Metric Type: MAQL Metric
- */
-
-export const Open3 = newMeasure(idRef("ac3s94vvc0JT", "measure"));
 /**
  * Metric Title: web
  * Metric ID: aandumiCanXr
@@ -446,6 +474,102 @@ export const Avg = {
    */
   ,
   Runsum: newMeasure(idRef("fact.v_fan_average.avg", "fact"), m => m.aggregation("runsum"))
+};
+/**
+ * Fact Title: Click Or Open
+ * Fact ID: fact.gd_camp_engage.click_or_open
+ */
+
+export const ClickOrOpen = {
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_camp_engage.click_or_open
+   * Fact Aggregation: sum
+   */
+  Sum: newMeasure(idRef("fact.gd_camp_engage.click_or_open", "fact"), m => m.aggregation("sum"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_camp_engage.click_or_open
+   * Fact Aggregation: avg
+   */
+  ,
+  Avg: newMeasure(idRef("fact.gd_camp_engage.click_or_open", "fact"), m => m.aggregation("avg"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_camp_engage.click_or_open
+   * Fact Aggregation: min
+   */
+  ,
+  Min: newMeasure(idRef("fact.gd_camp_engage.click_or_open", "fact"), m => m.aggregation("min"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_camp_engage.click_or_open
+   * Fact Aggregation: max
+   */
+  ,
+  Max: newMeasure(idRef("fact.gd_camp_engage.click_or_open", "fact"), m => m.aggregation("max"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_camp_engage.click_or_open
+   * Fact Aggregation: median
+   */
+  ,
+  Median: newMeasure(idRef("fact.gd_camp_engage.click_or_open", "fact"), m => m.aggregation("median"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_camp_engage.click_or_open
+   * Fact Aggregation: runsum
+   */
+  ,
+  Runsum: newMeasure(idRef("fact.gd_camp_engage.click_or_open", "fact"), m => m.aggregation("runsum"))
+};
+/**
+ * Fact Title: Clicked
+ * Fact ID: fact.gd_sms_engage.clicked
+ */
+
+export const Clicked = {
+  /**
+   * Fact Title: Clicked
+   * Fact ID: fact.gd_sms_engage.clicked
+   * Fact Aggregation: sum
+   */
+  Sum: newMeasure(idRef("fact.gd_sms_engage.clicked", "fact"), m => m.aggregation("sum"))
+  /**
+   * Fact Title: Clicked
+   * Fact ID: fact.gd_sms_engage.clicked
+   * Fact Aggregation: avg
+   */
+  ,
+  Avg: newMeasure(idRef("fact.gd_sms_engage.clicked", "fact"), m => m.aggregation("avg"))
+  /**
+   * Fact Title: Clicked
+   * Fact ID: fact.gd_sms_engage.clicked
+   * Fact Aggregation: min
+   */
+  ,
+  Min: newMeasure(idRef("fact.gd_sms_engage.clicked", "fact"), m => m.aggregation("min"))
+  /**
+   * Fact Title: Clicked
+   * Fact ID: fact.gd_sms_engage.clicked
+   * Fact Aggregation: max
+   */
+  ,
+  Max: newMeasure(idRef("fact.gd_sms_engage.clicked", "fact"), m => m.aggregation("max"))
+  /**
+   * Fact Title: Clicked
+   * Fact ID: fact.gd_sms_engage.clicked
+   * Fact Aggregation: median
+   */
+  ,
+  Median: newMeasure(idRef("fact.gd_sms_engage.clicked", "fact"), m => m.aggregation("median"))
+  /**
+   * Fact Title: Clicked
+   * Fact ID: fact.gd_sms_engage.clicked
+   * Fact Aggregation: runsum
+   */
+  ,
+  Runsum: newMeasure(idRef("fact.gd_sms_engage.clicked", "fact"), m => m.aggregation("runsum"))
 };
 /**
  * Fact Title: Count
@@ -830,54 +954,6 @@ export const Count_7 = {
    */
   ,
   Runsum: newMeasure(idRef("fact.v_fan_app_trend.count", "fact"), m => m.aggregation("runsum"))
-};
-/**
- * Fact Title: Delivered
- * Fact ID: fact.campaign_email_day_total.delivered
- */
-
-export const Delivered = {
-  /**
-   * Fact Title: Delivered
-   * Fact ID: fact.campaign_email_day_total.delivered
-   * Fact Aggregation: sum
-   */
-  Sum: newMeasure(idRef("fact.campaign_email_day_total.delivered", "fact"), m => m.aggregation("sum"))
-  /**
-   * Fact Title: Delivered
-   * Fact ID: fact.campaign_email_day_total.delivered
-   * Fact Aggregation: avg
-   */
-  ,
-  Avg: newMeasure(idRef("fact.campaign_email_day_total.delivered", "fact"), m => m.aggregation("avg"))
-  /**
-   * Fact Title: Delivered
-   * Fact ID: fact.campaign_email_day_total.delivered
-   * Fact Aggregation: min
-   */
-  ,
-  Min: newMeasure(idRef("fact.campaign_email_day_total.delivered", "fact"), m => m.aggregation("min"))
-  /**
-   * Fact Title: Delivered
-   * Fact ID: fact.campaign_email_day_total.delivered
-   * Fact Aggregation: max
-   */
-  ,
-  Max: newMeasure(idRef("fact.campaign_email_day_total.delivered", "fact"), m => m.aggregation("max"))
-  /**
-   * Fact Title: Delivered
-   * Fact ID: fact.campaign_email_day_total.delivered
-   * Fact Aggregation: median
-   */
-  ,
-  Median: newMeasure(idRef("fact.campaign_email_day_total.delivered", "fact"), m => m.aggregation("median"))
-  /**
-   * Fact Title: Delivered
-   * Fact ID: fact.campaign_email_day_total.delivered
-   * Fact Aggregation: runsum
-   */
-  ,
-  Runsum: newMeasure(idRef("fact.campaign_email_day_total.delivered", "fact"), m => m.aggregation("runsum"))
 };
 /**
  * Fact Title: Engagement
@@ -1460,7 +1536,7 @@ export const Score_2 = {
  * Fact ID: fact.campaign_email_day_total.sent
  */
 
-export const Sent = {
+export const Sent_1 = {
   /**
    * Fact Title: Sent
    * Fact ID: fact.campaign_email_day_total.sent
@@ -2387,6 +2463,328 @@ export const DateUSWeekQuarter = newAttribute("date.quarter.for.week.number");
  */
 
 export const DateEUWeekQuarter = newAttribute("date.quarter.for.euweek.number");
+/**
+ * Attribute Title: Year (Dates)
+ * Attribute ID: dates.year
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesYear = newAttribute("dates.year.default");
+/**
+ * Attribute Title: Quarter (Dates)
+ * Attribute ID: dates.quarter.in.year
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesQuarter = newAttribute("dates.quarter.in.year.default");
+/**
+ * Attribute Title: Week (Sun-Sat)/Year (Dates)
+ * Attribute ID: dates.week
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesWeekSunSatYear = {
+  /**
+   * Display Form Title: Week #/Year (W1/2010) (Dates)
+   * Display Form ID: dates.week.wk_year
+   */
+  WeekNrYear: newAttribute("dates.week.wk_year")
+  /**
+   * Display Form Title: Week Starting (Dates)
+   * Display Form ID: dates.week.starting
+   */
+  ,
+  WeekStarting: newAttribute("dates.week.starting")
+  /**
+   * Display Form Title: From - To (Dates)
+   * Display Form ID: dates.week.from_to
+   */
+  ,
+  FromTo: newAttribute("dates.week.from_to")
+  /**
+   * Display Form Title: Week #/Year (Cont.) (Dates)
+   * Display Form ID: dates.week.wk_year_cont
+   */
+  ,
+  WeekNrYear_1: newAttribute("dates.week.wk_year_cont")
+  /**
+   * Display Form Title: Wk/Qtr/Year (Cont.) (Dates)
+   * Display Form ID: dates.week.wk_qtr_year_cont
+   */
+  ,
+  WkQtrYear: newAttribute("dates.week.wk_qtr_year_cont")
+  /**
+   * Display Form Title: Wk/Qtr/Year (Dates)
+   * Display Form ID: dates.week.wk_qtr_year
+   */
+  ,
+  WkQtrYear_1: newAttribute("dates.week.wk_qtr_year")
+};
+/**
+ * Attribute Title: Week (Sun-Sat) (Dates)
+ * Attribute ID: dates.week.in.year
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesWeekSunSat = newAttribute("dates.week.in.year.number_us");
+/**
+ * Attribute Title: Week (Sun-Sat) of Qtr (Dates)
+ * Attribute ID: dates.week.in.quarter
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesWeekSunSatOfQtr = newAttribute("dates.week.in.quarter.number_us");
+/**
+ * Attribute Title: Week (Mon-Sun)/Year (Dates)
+ * Attribute ID: dates.euweek
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesWeekMonSunYear = {
+  /**
+   * Display Form Title: Week #/Year (W1/2010) (Dates)
+   * Display Form ID: dates.euweek.wk_year
+   */
+  WeekNrYear: newAttribute("dates.euweek.wk_year")
+  /**
+   * Display Form Title: Week Starting (Dates)
+   * Display Form ID: dates.euweek.starting
+   */
+  ,
+  WeekStarting: newAttribute("dates.euweek.starting")
+  /**
+   * Display Form Title: From - To (Dates)
+   * Display Form ID: dates.euweek.from_to
+   */
+  ,
+  FromTo: newAttribute("dates.euweek.from_to")
+};
+/**
+ * Attribute Title: Week (Mon-Sun) (Dates)
+ * Attribute ID: dates.euweek.in.year
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesWeekMonSun = newAttribute("dates.euweek.in.year.number_eu");
+/**
+ * Attribute Title: Week (Mon-Sun) of Qtr (Dates)
+ * Attribute ID: dates.euweek.in.quarter
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesWeekMonSunOfQtr = newAttribute("dates.euweek.in.quarter.number_eu");
+/**
+ * Attribute Title: Month (Dates)
+ * Attribute ID: dates.month.in.year
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesMonth = {
+  /**
+   * Display Form Title: Short (Jan) (Dates)
+   * Display Form ID: dates.month.in.year.short
+   */
+  Short: newAttribute("dates.month.in.year.short")
+  /**
+   * Display Form Title: Long (January) (Dates)
+   * Display Form ID: dates.month.in.year.long
+   */
+  ,
+  Long: newAttribute("dates.month.in.year.long")
+  /**
+   * Display Form Title: Number (M1) (Dates)
+   * Display Form ID: dates.month.in.year.number
+   */
+  ,
+  Number: newAttribute("dates.month.in.year.number")
+  /**
+   * Display Form Title: M/Q (M1/Q1) (Dates)
+   * Display Form ID: dates.month.in.year.m_q
+   */
+  ,
+  MQ: newAttribute("dates.month.in.year.m_q")
+};
+/**
+ * Attribute Title: Month of Quarter (Dates)
+ * Attribute ID: dates.month.in.quarter
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesMonthOfQuarter = newAttribute("dates.month.in.quarter.number");
+/**
+ * Attribute Title: Day of Year (Dates)
+ * Attribute ID: dates.day.in.year
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesDayOfYear = newAttribute("dates.day.in.year.default");
+/**
+ * Attribute Title: Day of Week (Sun-Sat) (Dates)
+ * Attribute ID: dates.day.in.week
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesDayOfWeekSunSat = {
+  /**
+   * Display Form Title: Short (Sun) (Dates)
+   * Display Form ID: dates.day.in.week.short
+   */
+  Short: newAttribute("dates.day.in.week.short")
+  /**
+   * Display Form Title: Long (Sunday) (Dates)
+   * Display Form ID: dates.day.in.week.long
+   */
+  ,
+  Long: newAttribute("dates.day.in.week.long")
+  /**
+   * Display Form Title: Number (1=Sunday) (Dates)
+   * Display Form ID: dates.day.in.week.number
+   */
+  ,
+  Number: newAttribute("dates.day.in.week.number")
+};
+/**
+ * Attribute Title: Day of Week (Mon-Sun) (Dates)
+ * Attribute ID: dates.day.in.euweek
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesDayOfWeekMonSun = {
+  /**
+   * Display Form Title: Short (Mon) (Dates)
+   * Display Form ID: dates.day.in.euweek.short
+   */
+  Short: newAttribute("dates.day.in.euweek.short")
+  /**
+   * Display Form Title: Long (Monday) (Dates)
+   * Display Form ID: dates.day.in.euweek.long
+   */
+  ,
+  Long: newAttribute("dates.day.in.euweek.long")
+  /**
+   * Display Form Title: Number (1=Monday) (Dates)
+   * Display Form ID: dates.day.in.euweek.number
+   */
+  ,
+  Number: newAttribute("dates.day.in.euweek.number")
+};
+/**
+ * Attribute Title: Day of Quarter (Dates)
+ * Attribute ID: dates.day.in.quarter
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesDayOfQuarter = newAttribute("dates.day.in.quarter.default");
+/**
+ * Attribute Title: Day of Month (Dates)
+ * Attribute ID: dates.day.in.month
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesDayOfMonth = newAttribute("dates.day.in.month.default");
+/**
+ * Attribute Title: Quarter/Year (Dates)
+ * Attribute ID: dates.quarter
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesQuarterYear = newAttribute("dates.quarter.short_us");
+/**
+ * Attribute Title: Month/Year (Dates)
+ * Attribute ID: dates.month
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesMonthYear = {
+  /**
+   * Display Form Title: Short (Jan 2010) (Dates)
+   * Display Form ID: dates.month.short
+   */
+  Short: newAttribute("dates.month.short")
+  /**
+   * Display Form Title: Long (January 2010) (Dates)
+   * Display Form ID: dates.month.long
+   */
+  ,
+  Long: newAttribute("dates.month.long")
+  /**
+   * Display Form Title: Number (1/2010) (Dates)
+   * Display Form ID: dates.month.number
+   */
+  ,
+  Number: newAttribute("dates.month.number")
+};
+/**
+ * Attribute Title: Date (Dates)
+ * Attribute ID: dates.date
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesDate = {
+  /**
+   * Display Form Title: mm/dd/yyyy (Dates)
+   * Display Form ID: dates.date.day.us.mm_dd_yyyy
+   */
+  MmDdYyyy: newAttribute("dates.date.day.us.mm_dd_yyyy")
+  /**
+   * Display Form Title: yyyy-mm-dd (Dates)
+   * Display Form ID: dates.date.day.yyyy_mm_dd
+   */
+  ,
+  YyyyMmDd: newAttribute("dates.date.day.yyyy_mm_dd")
+  /**
+   * Display Form Title: m/d/yy (no leading zeroes) (Dates)
+   * Display Form ID: dates.date.day.us.m_d_yy
+   */
+  ,
+  MDYy: newAttribute("dates.date.day.us.m_d_yy")
+  /**
+   * Display Form Title: Long (Mon, Jan 1, 2010) (Dates)
+   * Display Form ID: dates.date.day.us.long
+   */
+  ,
+  Long: newAttribute("dates.date.day.us.long")
+  /**
+   * Display Form Title: dd/mm/yyyy (Dates)
+   * Display Form ID: dates.date.day.uk.dd_mm_yyyy
+   */
+  ,
+  DdMmYyyy: newAttribute("dates.date.day.uk.dd_mm_yyyy")
+  /**
+   * Display Form Title: dd-mm-yyyy (Dates)
+   * Display Form ID: dates.date.day.eu.dd_mm_yyyy
+   */
+  ,
+  DdMmYyyy_1: newAttribute("dates.date.day.eu.dd_mm_yyyy")
+};
+/**
+ * Attribute Title: US Week Year (Dates)
+ * Attribute ID: dates.year.for.week
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesUSWeekYear = newAttribute("dates.year.for.week.number");
+/**
+ * Attribute Title: EU Week Year (Dates)
+ * Attribute ID: dates.year.for.euweek
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesEUWeekYear = newAttribute("dates.year.for.euweek.number");
+/**
+ * Attribute Title: US Week Quarter (Dates)
+ * Attribute ID: dates.quarter.for.week
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesUSWeekQuarter = newAttribute("dates.quarter.for.week.number");
+/**
+ * Attribute Title: EU Week Quarter (Dates)
+ * Attribute ID: dates.quarter.for.euweek
+ * @deprecated constants generated for date attributes are deprecated in favor of DateDatasets mapping
+ */
+
+export const DatesEUWeekQuarter = newAttribute("dates.quarter.for.euweek.number");
 /** Available Date Data Sets */
 
 export const DateDatasets = {
@@ -3317,6 +3715,471 @@ export const DateDatasets = {
        */
       ,
       WeekQuarter: newAttribute("date.quarter.for.euweek.number")
+    }
+  }
+  /**
+   * Date Data Set Title: Date (Dates)
+   * Date Data Set ID: dates.dataset.dt
+   */
+  ,
+  Dates: {
+    ref: idRef("dates.dataset.dt", "dataSet"),
+    identifier: "dates.dataset.dt"
+    /**
+     * Date Attribute: Year (Dates)
+     * Date Attribute ID: dates.year
+     */
+    ,
+    Year: {
+      ref: idRef("dates.year", "attribute"),
+      identifier: "dates.year"
+      /**
+       * Display Form Title: Year (Dates)
+       * Display Form ID: dates.year.default
+       */
+      ,
+      Default: newAttribute("dates.year.default")
+    }
+    /**
+     * Date Attribute: Quarter (Dates)
+     * Date Attribute ID: dates.quarter.in.year
+     */
+    ,
+    Quarter: {
+      ref: idRef("dates.quarter.in.year", "attribute"),
+      identifier: "dates.quarter.in.year"
+      /**
+       * Display Form Title: default (Dates)
+       * Display Form ID: dates.quarter.in.year.default
+       */
+      ,
+      Default: newAttribute("dates.quarter.in.year.default")
+    }
+    /**
+     * Date Attribute: Week (Sun-Sat)/Year (Dates)
+     * Date Attribute ID: dates.week
+     */
+    ,
+    WeekSunSatYear: {
+      ref: idRef("dates.week", "attribute"),
+      identifier: "dates.week"
+      /**
+       * Display Form Title: Week #/Year (W1/2010) (Dates)
+       * Display Form ID: dates.week.wk_year
+       */
+      ,
+      WeekNrYear: newAttribute("dates.week.wk_year")
+      /**
+       * Display Form Title: Week Starting (Dates)
+       * Display Form ID: dates.week.starting
+       */
+      ,
+      WeekStarting: newAttribute("dates.week.starting")
+      /**
+       * Display Form Title: From - To (Dates)
+       * Display Form ID: dates.week.from_to
+       */
+      ,
+      FromTo: newAttribute("dates.week.from_to")
+      /**
+       * Display Form Title: Week #/Year (Cont.) (Dates)
+       * Display Form ID: dates.week.wk_year_cont
+       */
+      ,
+      WeekNrYear_1: newAttribute("dates.week.wk_year_cont")
+      /**
+       * Display Form Title: Wk/Qtr/Year (Cont.) (Dates)
+       * Display Form ID: dates.week.wk_qtr_year_cont
+       */
+      ,
+      WkQtrYear: newAttribute("dates.week.wk_qtr_year_cont")
+      /**
+       * Display Form Title: Wk/Qtr/Year (Dates)
+       * Display Form ID: dates.week.wk_qtr_year
+       */
+      ,
+      WkQtrYear_1: newAttribute("dates.week.wk_qtr_year")
+    }
+    /**
+     * Date Attribute: Week (Sun-Sat) (Dates)
+     * Date Attribute ID: dates.week.in.year
+     */
+    ,
+    WeekSunSat: {
+      ref: idRef("dates.week.in.year", "attribute"),
+      identifier: "dates.week.in.year"
+      /**
+       * Display Form Title: Number US (Dates)
+       * Display Form ID: dates.week.in.year.number_us
+       */
+      ,
+      NumberUS: newAttribute("dates.week.in.year.number_us")
+    }
+    /**
+     * Date Attribute: Week (Sun-Sat) of Qtr (Dates)
+     * Date Attribute ID: dates.week.in.quarter
+     */
+    ,
+    WeekSunSatOfQtr: {
+      ref: idRef("dates.week.in.quarter", "attribute"),
+      identifier: "dates.week.in.quarter"
+      /**
+       * Display Form Title: Number US (Dates)
+       * Display Form ID: dates.week.in.quarter.number_us
+       */
+      ,
+      NumberUS: newAttribute("dates.week.in.quarter.number_us")
+    }
+    /**
+     * Date Attribute: Week (Mon-Sun)/Year (Dates)
+     * Date Attribute ID: dates.euweek
+     */
+    ,
+    WeekMonSunYear: {
+      ref: idRef("dates.euweek", "attribute"),
+      identifier: "dates.euweek"
+      /**
+       * Display Form Title: Week #/Year (W1/2010) (Dates)
+       * Display Form ID: dates.euweek.wk_year
+       */
+      ,
+      WeekNrYear: newAttribute("dates.euweek.wk_year")
+      /**
+       * Display Form Title: Week Starting (Dates)
+       * Display Form ID: dates.euweek.starting
+       */
+      ,
+      WeekStarting: newAttribute("dates.euweek.starting")
+      /**
+       * Display Form Title: From - To (Dates)
+       * Display Form ID: dates.euweek.from_to
+       */
+      ,
+      FromTo: newAttribute("dates.euweek.from_to")
+    }
+    /**
+     * Date Attribute: Week (Mon-Sun) (Dates)
+     * Date Attribute ID: dates.euweek.in.year
+     */
+    ,
+    WeekMonSun: {
+      ref: idRef("dates.euweek.in.year", "attribute"),
+      identifier: "dates.euweek.in.year"
+      /**
+       * Display Form Title: Number EU (Dates)
+       * Display Form ID: dates.euweek.in.year.number_eu
+       */
+      ,
+      NumberEU: newAttribute("dates.euweek.in.year.number_eu")
+    }
+    /**
+     * Date Attribute: Week (Mon-Sun) of Qtr (Dates)
+     * Date Attribute ID: dates.euweek.in.quarter
+     */
+    ,
+    WeekMonSunOfQtr: {
+      ref: idRef("dates.euweek.in.quarter", "attribute"),
+      identifier: "dates.euweek.in.quarter"
+      /**
+       * Display Form Title: Number EU (Dates)
+       * Display Form ID: dates.euweek.in.quarter.number_eu
+       */
+      ,
+      NumberEU: newAttribute("dates.euweek.in.quarter.number_eu")
+    }
+    /**
+     * Date Attribute: Month (Dates)
+     * Date Attribute ID: dates.month.in.year
+     */
+    ,
+    Month: {
+      ref: idRef("dates.month.in.year", "attribute"),
+      identifier: "dates.month.in.year"
+      /**
+       * Display Form Title: Short (Jan) (Dates)
+       * Display Form ID: dates.month.in.year.short
+       */
+      ,
+      Short: newAttribute("dates.month.in.year.short")
+      /**
+       * Display Form Title: Long (January) (Dates)
+       * Display Form ID: dates.month.in.year.long
+       */
+      ,
+      Long: newAttribute("dates.month.in.year.long")
+      /**
+       * Display Form Title: Number (M1) (Dates)
+       * Display Form ID: dates.month.in.year.number
+       */
+      ,
+      Number: newAttribute("dates.month.in.year.number")
+      /**
+       * Display Form Title: M/Q (M1/Q1) (Dates)
+       * Display Form ID: dates.month.in.year.m_q
+       */
+      ,
+      MQ: newAttribute("dates.month.in.year.m_q")
+    }
+    /**
+     * Date Attribute: Month of Quarter (Dates)
+     * Date Attribute ID: dates.month.in.quarter
+     */
+    ,
+    MonthOfQuarter: {
+      ref: idRef("dates.month.in.quarter", "attribute"),
+      identifier: "dates.month.in.quarter"
+      /**
+       * Display Form Title: Number (Dates)
+       * Display Form ID: dates.month.in.quarter.number
+       */
+      ,
+      Number: newAttribute("dates.month.in.quarter.number")
+    }
+    /**
+     * Date Attribute: Day of Year (Dates)
+     * Date Attribute ID: dates.day.in.year
+     */
+    ,
+    DayOfYear: {
+      ref: idRef("dates.day.in.year", "attribute"),
+      identifier: "dates.day.in.year"
+      /**
+       * Display Form Title: default (Dates)
+       * Display Form ID: dates.day.in.year.default
+       */
+      ,
+      Default: newAttribute("dates.day.in.year.default")
+    }
+    /**
+     * Date Attribute: Day of Week (Sun-Sat) (Dates)
+     * Date Attribute ID: dates.day.in.week
+     */
+    ,
+    DayOfWeekSunSat: {
+      ref: idRef("dates.day.in.week", "attribute"),
+      identifier: "dates.day.in.week"
+      /**
+       * Display Form Title: Short (Sun) (Dates)
+       * Display Form ID: dates.day.in.week.short
+       */
+      ,
+      Short: newAttribute("dates.day.in.week.short")
+      /**
+       * Display Form Title: Long (Sunday) (Dates)
+       * Display Form ID: dates.day.in.week.long
+       */
+      ,
+      Long: newAttribute("dates.day.in.week.long")
+      /**
+       * Display Form Title: Number (1=Sunday) (Dates)
+       * Display Form ID: dates.day.in.week.number
+       */
+      ,
+      Number: newAttribute("dates.day.in.week.number")
+    }
+    /**
+     * Date Attribute: Day of Week (Mon-Sun) (Dates)
+     * Date Attribute ID: dates.day.in.euweek
+     */
+    ,
+    DayOfWeekMonSun: {
+      ref: idRef("dates.day.in.euweek", "attribute"),
+      identifier: "dates.day.in.euweek"
+      /**
+       * Display Form Title: Short (Mon) (Dates)
+       * Display Form ID: dates.day.in.euweek.short
+       */
+      ,
+      Short: newAttribute("dates.day.in.euweek.short")
+      /**
+       * Display Form Title: Long (Monday) (Dates)
+       * Display Form ID: dates.day.in.euweek.long
+       */
+      ,
+      Long: newAttribute("dates.day.in.euweek.long")
+      /**
+       * Display Form Title: Number (1=Monday) (Dates)
+       * Display Form ID: dates.day.in.euweek.number
+       */
+      ,
+      Number: newAttribute("dates.day.in.euweek.number")
+    }
+    /**
+     * Date Attribute: Day of Quarter (Dates)
+     * Date Attribute ID: dates.day.in.quarter
+     */
+    ,
+    DayOfQuarter: {
+      ref: idRef("dates.day.in.quarter", "attribute"),
+      identifier: "dates.day.in.quarter"
+      /**
+       * Display Form Title: default (Dates)
+       * Display Form ID: dates.day.in.quarter.default
+       */
+      ,
+      Default: newAttribute("dates.day.in.quarter.default")
+    }
+    /**
+     * Date Attribute: Day of Month (Dates)
+     * Date Attribute ID: dates.day.in.month
+     */
+    ,
+    DayOfMonth: {
+      ref: idRef("dates.day.in.month", "attribute"),
+      identifier: "dates.day.in.month"
+      /**
+       * Display Form Title: default (Dates)
+       * Display Form ID: dates.day.in.month.default
+       */
+      ,
+      Default: newAttribute("dates.day.in.month.default")
+    }
+    /**
+     * Date Attribute: Quarter/Year (Dates)
+     * Date Attribute ID: dates.quarter
+     */
+    ,
+    QuarterYear: {
+      ref: idRef("dates.quarter", "attribute"),
+      identifier: "dates.quarter"
+      /**
+       * Display Form Title: US Short (Dates)
+       * Display Form ID: dates.quarter.short_us
+       */
+      ,
+      USShort: newAttribute("dates.quarter.short_us")
+    }
+    /**
+     * Date Attribute: Month/Year (Dates)
+     * Date Attribute ID: dates.month
+     */
+    ,
+    MonthYear: {
+      ref: idRef("dates.month", "attribute"),
+      identifier: "dates.month"
+      /**
+       * Display Form Title: Short (Jan 2010) (Dates)
+       * Display Form ID: dates.month.short
+       */
+      ,
+      Short: newAttribute("dates.month.short")
+      /**
+       * Display Form Title: Long (January 2010) (Dates)
+       * Display Form ID: dates.month.long
+       */
+      ,
+      Long: newAttribute("dates.month.long")
+      /**
+       * Display Form Title: Number (1/2010) (Dates)
+       * Display Form ID: dates.month.number
+       */
+      ,
+      Number: newAttribute("dates.month.number")
+    }
+    /**
+     * Date Attribute: Date (Dates)
+     * Date Attribute ID: dates.date
+     */
+    ,
+    Date: {
+      ref: idRef("dates.date", "attribute"),
+      identifier: "dates.date"
+      /**
+       * Display Form Title: mm/dd/yyyy (Dates)
+       * Display Form ID: dates.date.day.us.mm_dd_yyyy
+       */
+      ,
+      MmDdYyyy: newAttribute("dates.date.day.us.mm_dd_yyyy")
+      /**
+       * Display Form Title: yyyy-mm-dd (Dates)
+       * Display Form ID: dates.date.day.yyyy_mm_dd
+       */
+      ,
+      YyyyMmDd: newAttribute("dates.date.day.yyyy_mm_dd")
+      /**
+       * Display Form Title: m/d/yy (no leading zeroes) (Dates)
+       * Display Form ID: dates.date.day.us.m_d_yy
+       */
+      ,
+      MDYy: newAttribute("dates.date.day.us.m_d_yy")
+      /**
+       * Display Form Title: Long (Mon, Jan 1, 2010) (Dates)
+       * Display Form ID: dates.date.day.us.long
+       */
+      ,
+      Long: newAttribute("dates.date.day.us.long")
+      /**
+       * Display Form Title: dd/mm/yyyy (Dates)
+       * Display Form ID: dates.date.day.uk.dd_mm_yyyy
+       */
+      ,
+      DdMmYyyy: newAttribute("dates.date.day.uk.dd_mm_yyyy")
+      /**
+       * Display Form Title: dd-mm-yyyy (Dates)
+       * Display Form ID: dates.date.day.eu.dd_mm_yyyy
+       */
+      ,
+      DdMmYyyy_1: newAttribute("dates.date.day.eu.dd_mm_yyyy")
+    }
+    /**
+     * Date Attribute: US Week Year (Dates)
+     * Date Attribute ID: dates.year.for.week
+     */
+    ,
+    USWeekYear: {
+      ref: idRef("dates.year.for.week", "attribute"),
+      identifier: "dates.year.for.week"
+      /**
+       * Display Form Title: Week Year (Dates)
+       * Display Form ID: dates.year.for.week.number
+       */
+      ,
+      WeekYear: newAttribute("dates.year.for.week.number")
+    }
+    /**
+     * Date Attribute: EU Week Year (Dates)
+     * Date Attribute ID: dates.year.for.euweek
+     */
+    ,
+    EUWeekYear: {
+      ref: idRef("dates.year.for.euweek", "attribute"),
+      identifier: "dates.year.for.euweek"
+      /**
+       * Display Form Title: Week Year (Dates)
+       * Display Form ID: dates.year.for.euweek.number
+       */
+      ,
+      WeekYear: newAttribute("dates.year.for.euweek.number")
+    }
+    /**
+     * Date Attribute: US Week Quarter (Dates)
+     * Date Attribute ID: dates.quarter.for.week
+     */
+    ,
+    USWeekQuarter: {
+      ref: idRef("dates.quarter.for.week", "attribute"),
+      identifier: "dates.quarter.for.week"
+      /**
+       * Display Form Title: Week Quarter (Dates)
+       * Display Form ID: dates.quarter.for.week.number
+       */
+      ,
+      WeekQuarter: newAttribute("dates.quarter.for.week.number")
+    }
+    /**
+     * Date Attribute: EU Week Quarter (Dates)
+     * Date Attribute ID: dates.quarter.for.euweek
+     */
+    ,
+    EUWeekQuarter: {
+      ref: idRef("dates.quarter.for.euweek", "attribute"),
+      identifier: "dates.quarter.for.euweek"
+      /**
+       * Display Form Title: Week Quarter (Dates)
+       * Display Form ID: dates.quarter.for.euweek.number
+       */
+      ,
+      WeekQuarter: newAttribute("dates.quarter.for.euweek.number")
     }
   }
 };

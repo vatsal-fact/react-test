@@ -9,7 +9,7 @@
 
 .Main {
     flex: 1 0 auto;
-    padding: $spacing * 2 + 56px $spacing $spacing * 2 $spacing;
+    padding: $spacing * 1 + 56px $spacing $spacing * 2 $spacing;
     max-width: 1200px;
     width: calc(100% - (#{$spacing} * 2));
     margin: 0 auto;
