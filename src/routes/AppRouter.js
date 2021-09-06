@@ -11,6 +11,7 @@ import Dashboard2 from "./MaturityDashboard";
 import Dashboard1 from "./ExecutiveDashboard";
 import Email from "./Email";
 import Sms from "./Sms";
+import MobilePush from "./MobilePush";
 import Home2 from "./Home2";
 // import Home3 from "./Home3";
 
@@ -40,6 +41,7 @@ const AppRouter = () => {
                     <Route exact path="/dashboard/maturity" component={Dashboard2} />
                     <Route exact path="/cohort/email" component={Email} />
                     <Route exact path="/cohort/sms" component={Sms} />
+                    <Route exact path="/cohort/mobilepush" component={MobilePush} />
                     <Route exact path="/test" component={Home2} />
                     {/* <Route exact path="/test1" component={Home3} /> */}
                     {/* Uncomment the next line if you want to redirect unauthorized users to login form */}

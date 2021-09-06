@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-/* THIS FILE WAS AUTO-GENERATED USING CATALOG EXPORTER; YOU SHOULD NOT EDIT THIS FILE; GENERATE TIME: 2021-09-05T14:53:02.021Z; */
+/* THIS FILE WAS AUTO-GENERATED USING CATALOG EXPORTER; YOU SHOULD NOT EDIT THIS FILE; GENERATE TIME: 2021-09-06T05:42:20.709Z; */
 // @ts-ignore ignore unused imports here if they happen (e.g. when there is no measure in the workspace)
 import { newAttribute, newMeasure, idRef } from "@gooddata/sdk-model";
 /**
@@ -178,6 +178,12 @@ export const Delivered_1 = newAttribute("label.gd_factoreal_campaign.delivered")
 
 export const Delivered_2 = newAttribute("label.gd_sms_campaign.delivered");
 /**
+ * Attribute Title: Journey Id
+ * Attribute ID: attr.gd_mobilepush_journey.journeyid
+ */
+
+export const JourneyId = newAttribute("label.gd_mobilepush_journey.journeyid");
+/**
  * Attribute Title: Name
  * Attribute ID: attr.gd_factoreal_campaign.name
  */
@@ -189,6 +195,12 @@ export const Name = newAttribute("label.gd_factoreal_campaign.name");
  */
 
 export const Name_1 = newAttribute("label.gd_sms_campaign.name");
+/**
+ * Attribute Title: Name
+ * Attribute ID: attr.gd_mobilepush_journey.name
+ */
+
+export const Name_2 = newAttribute("label.gd_mobilepush_journey.name");
 /**
  * Attribute Title: Order Id
  * Attribute ID: attr.v_fan_store_order.orderid
@@ -213,6 +225,12 @@ export const Param = newAttribute("label.v_fan_email_sms.param");
  */
 
 export const Sent = newAttribute("label.gd_sms_campaign.sent");
+/**
+ * Attribute Title: Sent
+ * Attribute ID: attr.gd_mobilepush_journey.sent
+ */
+
+export const Sent_1 = newAttribute("label.gd_mobilepush_journey.sent");
 /**
  * Attribute Title: Status
  * Attribute ID: attr.gd_sms_campaign.status
@@ -1248,7 +1266,7 @@ export const EnterpriseId_1 = {
  * Fact ID: fact.gd_email_data.journey_id
  */
 
-export const JourneyId = {
+export const JourneyId_1 = {
   /**
    * Fact Title: Journey Id
    * Fact ID: fact.gd_email_data.journey_id
@@ -1536,7 +1554,7 @@ export const Score_2 = {
  * Fact ID: fact.campaign_email_day_total.sent
  */
 
-export const Sent_1 = {
+export const Sent_2 = {
   /**
    * Fact Title: Sent
    * Fact ID: fact.campaign_email_day_total.sent
@@ -1770,6 +1788,54 @@ export const Value = {
    */
   ,
   Runsum: newMeasure(idRef("fact.v_fan_email_sms.value", "fact"), m => m.aggregation("runsum"))
+};
+/**
+ * Fact Title: View
+ * Fact ID: fact.gd_mobilepush_engage.view
+ */
+
+export const View = {
+  /**
+   * Fact Title: View
+   * Fact ID: fact.gd_mobilepush_engage.view
+   * Fact Aggregation: sum
+   */
+  Sum: newMeasure(idRef("fact.gd_mobilepush_engage.view", "fact"), m => m.aggregation("sum"))
+  /**
+   * Fact Title: View
+   * Fact ID: fact.gd_mobilepush_engage.view
+   * Fact Aggregation: avg
+   */
+  ,
+  Avg: newMeasure(idRef("fact.gd_mobilepush_engage.view", "fact"), m => m.aggregation("avg"))
+  /**
+   * Fact Title: View
+   * Fact ID: fact.gd_mobilepush_engage.view
+   * Fact Aggregation: min
+   */
+  ,
+  Min: newMeasure(idRef("fact.gd_mobilepush_engage.view", "fact"), m => m.aggregation("min"))
+  /**
+   * Fact Title: View
+   * Fact ID: fact.gd_mobilepush_engage.view
+   * Fact Aggregation: max
+   */
+  ,
+  Max: newMeasure(idRef("fact.gd_mobilepush_engage.view", "fact"), m => m.aggregation("max"))
+  /**
+   * Fact Title: View
+   * Fact ID: fact.gd_mobilepush_engage.view
+   * Fact Aggregation: median
+   */
+  ,
+  Median: newMeasure(idRef("fact.gd_mobilepush_engage.view", "fact"), m => m.aggregation("median"))
+  /**
+   * Fact Title: View
+   * Fact ID: fact.gd_mobilepush_engage.view
+   * Fact Aggregation: runsum
+   */
+  ,
+  Runsum: newMeasure(idRef("fact.gd_mobilepush_engage.view", "fact"), m => m.aggregation("runsum"))
 };
 /**
  * Fact Title: Web Avg

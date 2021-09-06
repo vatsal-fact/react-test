@@ -44,7 +44,7 @@ const Welcome = () => {
                 <Link style={{ textDecoration: "none" }} to="/cohort/sms">
                     <Card title="SMS Engagement Cohort"></Card>
                 </Link>
-                <Link style={{ textDecoration: "none" }} to="/">
+                <Link style={{ textDecoration: "none" }} to="/cohort/mobilepush">
                     <Card title="Mobile Push Engagement Cohort"></Card>
                 </Link>
             </div>

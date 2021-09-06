@@ -145,7 +145,7 @@ const dateFilterOptions = {
 
 const MobilePush = () => {
     const [filter, setFilter] = useState(
-        newNegativeAttributeFilter(attributeDisplayFormRef(Md.Name), { uris: [] }),
+        newNegativeAttributeFilter(attributeDisplayFormRef(Md.Name_2), { uris: [] }),
     );
 
     const [filterDate, setFilterDate] = useState({
@@ -185,25 +185,20 @@ const MobilePush = () => {
                     />
                 </div>
                 <div style={{ width: "200px", paddingRight: "20px" }}>
-                    <AttributeFilterButton filter={filter} onApply={setFilter} title="Campaigns" />
+                    <AttributeFilterButton filter={filter} onApply={setFilter} title="Journeys" />
                 </div>
             </div>
             <hr style={{ border: "1px solid #dde4eb" }} />
             <Execute
-                seriesBy={[Md.ClickOrOpen.Sum]}
-                slicesBy={[
-                    Md.CampaignId,
-                    Md.DatesDate.YyyyMmDd,
-                    Md.Name,
-                    Md.Delivered_1,
-                    Md.DateDate.YyyyMmDd,
-                ]}
+                seriesBy={[Md.View.Sum]}
+                slicesBy={[Md.JourneyId, Md.DatesDate.YyyyMmDd, Md.Name_2, Md.Sent_1, Md.DateDate.YyyyMmDd]}
                 filters={dateFilter ? [dateFilter, filter] : [filter]}
             >
                 {executionResult => {
                     if (executionResult.error) {
                         return <Redirect to="/login" />;
                     }
+                    console.log(executionResult);
                     return (
                         <div>
                             {executionResult.result != undefined ? (
