@@ -13,7 +13,7 @@ import Button from "../controls/Button";
 import sharedStyles from "../../shared.module.scss";
 import styles from "./LoginForm.module.scss";
 
-const LoginFormComponent = (props) => {
+const LoginFormComponent = props => {
     const {
         values,
         touched,
@@ -31,19 +31,13 @@ const LoginFormComponent = (props) => {
             <form onSubmit={handleSubmit} className={cx(styles.Login, "s-login-form")}>
                 <div className={styles.LoginLogo}>
                     <img
-                        src="https://secure.gooddata.com/images/logo-new.png"
+                        src="https://www.factoreal.com/wp-content/uploads/2021/02/favi.svg"
                         alt="GoodData"
                         className={styles.LoginLogo}
-                        style={{ height: 70 }}
+                        style={{ height: 130 }}
                     />
                 </div>
-                <h2>
-                    Please sign in to the{" "}
-                    <a className={cx(sharedStyles.Link, sharedStyles.BreakWord)} href={backend}>
-                        {backend.replace(/https?:\/\//, "")}
-                    </a>{" "}
-                    domain
-                </h2>
+                <h3>Please sign in</h3>
                 <div className={styles.InputBlock}>
                     <Label
                         className={styles.Label}
@@ -114,14 +108,16 @@ const formikConnector = withFormik({
     }),
 
     validationSchema: object().shape({
-        email: string().email("Invalid e-mail address").required("E-mail is required"),
+        email: string()
+            .email("Invalid e-mail address")
+            .required("E-mail is required"),
         password: string().required("Password is required"),
     }),
 
     handleSubmit: ({ email, password }, { props: { login, history }, setFieldError, setSubmitting }) => {
         return login(email, password).then(
             () => history.push("/"),
-            (error) => {
+            error => {
                 setSubmitting(false);
                 if (error.response && error.response.status === 401) {
                     setFieldError("password", "E-mail or password is invalid");

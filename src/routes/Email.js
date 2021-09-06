@@ -9,6 +9,7 @@ import "@gooddata/sdk-ui-ext/styles/css/main.css";
 import { AttributeFilterButton, DateFilter, DateFilterHelpers } from "@gooddata/sdk-ui-filters";
 import { newNegativeAttributeFilter, idRef, attributeDisplayFormRef } from "@gooddata/sdk-model";
 import Cohort from "./Cohort";
+import { Redirect } from "react-router-dom";
 
 const dateFrom = new Date();
 dateFrom.setMonth(dateFrom.getMonth() - 1);
@@ -200,6 +201,9 @@ const Email = () => {
                 filters={dateFilter ? [dateFilter, filter] : [filter]}
             >
                 {executionResult => {
+                    if (executionResult.error) {
+                        return <Redirect to="/login" />;
+                    }
                     return (
                         <div>
                             {executionResult.result != undefined ? (

@@ -15,49 +15,7 @@ const SocialItem = ({ link, title, imageUri }) => (
 );
 
 const Footer = () => {
-    return (
-        <footer className={styles.Footer}>
-            {/* <section className={styles.FooterLinks}>
-                <h3 className={styles.FooterLinksHeader}>Find more about GoodData.UI&nbsp;on</h3>
-                <div className={styles.Social}>
-                    <SocialItem
-                        imageUri={githubUri}
-                        link="https://github.com/gooddata/gooddata-react-components"
-                        title="GitHub"
-                    />
-
-                    <SocialItem
-                        imageUri={stackOverflowUri}
-                        link="https://stackoverflow.com/questions/tagged/gooddata"
-                        title="Stack Overflow"
-                    />
-
-                    <SocialItem
-                        imageUri={twitterUri}
-                        link="https://twitter.com/gooddata_dev"
-                        title="Twitter"
-                    />
-
-                    <SocialItem
-                        imageUri={npmUri}
-                        link="https://www.npmjs.com/package/@gooddata/react-components"
-                        title="NPM"
-                    />
-                </div>
-            </section> */}
-            {/* <section className={styles.Copyright}>
-                Copyright © 2007–<span>{new Date().getFullYear()}</span> GoodData Corporation. All Rights
-                Reserved. Code licensed under a dual license
-                <br />
-                <a
-                    href="https://github.com/gooddata/gooddata-react-components/blob/master/LICENSE"
-                    className={styles.FooterLink}
-                >
-                    CC BY-NC 4.0 for trial experience and GoodData.UI EULA for commercial use.
-                </a>
-            </section> */}
-        </footer>
-    );
+    return <footer className={styles.Footer}></footer>;
 };
 
 export default Footer;

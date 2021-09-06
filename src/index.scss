@@ -55,3 +55,12 @@ h3 {
 .button-class:hover {
     box-shadow: 0 0 0 1px #14b2e2;
 }
+
+.cards {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

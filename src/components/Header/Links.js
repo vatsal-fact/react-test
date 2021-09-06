@@ -14,38 +14,12 @@ const Links = () => {
             >
                 Welcome
             </NavLink> */}
-            <NavLink
-                to={"/dashboard/executive"}
-                className={styles.Link}
-                activeClassName={styles.LinkActive}
-                exact
-            >
-                Fan Maturity Model - I
+            {/* <NavLink to={"/dashboard/"} className={styles.Link} activeClassName={styles.LinkActive} exact>
+                Fan Maturity Model
             </NavLink>
-            <NavLink
-                to={"/dashboard/maturity"}
-                className={styles.Link}
-                activeClassName={styles.LinkActive}
-                exact
-            >
-                Fan Maturity Model - II
-            </NavLink>
-            <NavLink
-                to={"/cohort/email"}
-                className={styles.Link}
-                activeClassName={styles.LinkActive}
-                exact
-            >
-                Email
-            </NavLink>
-            <NavLink
-                to={"/cohort/sms"}
-                className={styles.Link}
-                activeClassName={styles.LinkActive}
-                exact
-            >
-                Sms
-            </NavLink>
+            <NavLink to={"/cohort"} className={styles.Link} activeClassName={styles.LinkActive} exact>
+                Cohorts
+            </NavLink> */}
         </>
     );
 };

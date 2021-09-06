@@ -232,7 +232,7 @@ export default class Cohort extends Component {
                     </div>
                     <div>
                         <button className="button-class" onClick={this.handleAbsolue}>
-                            {this.state.showAbsolute ? "Show %" : "Hide %"}
+                            {this.state.showAbsolute ? "Show %" : "Show Absolute"}
                         </button>
                         {/* <button className="button-class" onClick={this.handleCells}>
                             {this.state.showCells ? "Hide" : "Show"} Cells

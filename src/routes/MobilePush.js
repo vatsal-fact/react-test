@@ -143,9 +143,9 @@ const dateFilterOptions = {
     },
 };
 
-const Sms = () => {
+const MobilePush = () => {
     const [filter, setFilter] = useState(
-        newNegativeAttributeFilter(attributeDisplayFormRef(Md.Name_1), { uris: [] }),
+        newNegativeAttributeFilter(attributeDisplayFormRef(Md.Name), { uris: [] }),
     );
 
     const [filterDate, setFilterDate] = useState({
@@ -169,7 +169,7 @@ const Sms = () => {
     return (
         <Page>
             <span style={{ color: "#464e56", fontSize: "24px", fontWeight: "bold", lineHeight: "32px" }}>
-                Sms Engagement Cohort
+                Mobile Push Engagement Cohort
             </span>
             <hr style={{ border: "1px solid #dde4eb" }} />
             <div style={{ display: "flex" }}>
@@ -190,12 +190,12 @@ const Sms = () => {
             </div>
             <hr style={{ border: "1px solid #dde4eb" }} />
             <Execute
-                seriesBy={[Md.Clicked.Sum]}
+                seriesBy={[Md.ClickOrOpen.Sum]}
                 slicesBy={[
-                    Md.CampaignId_1,
+                    Md.CampaignId,
                     Md.DatesDate.YyyyMmDd,
-                    Md.Name_1,
-                    Md.Delivered_2,
+                    Md.Name,
+                    Md.Delivered_1,
                     Md.DateDate.YyyyMmDd,
                 ]}
                 filters={dateFilter ? [dateFilter, filter] : [filter]}
@@ -219,4 +219,4 @@ const Sms = () => {
     );
 };
 
-export default Sms;
+export default MobilePush;

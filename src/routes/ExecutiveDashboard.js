@@ -4,6 +4,8 @@ import Page from "../components/Page";
 import { idRef, newNegativeAttributeFilter, attributeDisplayFormRef } from "@gooddata/sdk-model";
 import { AttributeFilterButton, DateFilter, DateFilterHelpers } from "@gooddata/sdk-ui-filters";
 import * as Md from "../md/full";
+import Error from "../components/Error";
+import { Redirect } from "react-router";
 
 const dateFrom = new Date();
 dateFrom.setMonth(dateFrom.getMonth() - 1);
@@ -159,6 +161,13 @@ const Dashboard = () => {
         filterDate.excludeCurrentPeriod,
     );
 
+    const CustomError = ({ message }) => (
+        <p>
+            {console.log(message)}
+            <Redirect to="/login" />
+        </p>
+    );
+
     return (
         <Page>
             <span style={{ color: "#464e56", fontSize: "24px", fontWeight: "bold", lineHeight: "32px" }}>
@@ -180,7 +189,12 @@ const Dashboard = () => {
                 </div>
             </div>
             <hr style={{ border: "1px solid #dde4eb" }} />
-            <DashboardView dashboard={dashboardRef} filters={dateFilter ? [dateFilter] : []} isReadOnly />
+            <DashboardView
+                dashboard={dashboardRef}
+                filters={dateFilter ? [dateFilter] : []}
+                isReadOnly
+                ErrorComponent={CustomError}
+            />
         </Page>
     );
 };

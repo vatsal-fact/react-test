@@ -1,0 +1,52 @@
+.card {
+    background: #fff;
+    width: 24em;
+    border-radius: 0.6em;
+    margin: 1em;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 10px -5px hsla(240, 30.1%, 28%, 0.25);
+    transition: all ease 200ms;
+}
+
+.card:hover {
+    transform: scale(1);
+    box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12);
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card h2 {
+    color: #464e56;
+    margin: 0;
+    line-height: 1.4;
+    font-size: 1.3em;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    transition: all ease-in 100ms;
+    // padding: 50px 50px;
+    text-align: center;
+}
+
+.card p {
+    color: #777;
+}
+
+.card h5 {
+    color: #464e56;
+    margin: 0;
+    line-height: 1.4;
+    font-size: 1.1em;
+    font-weight: 200;
+    font-family: "Montserrat", sans-serif;
+    transition: all ease-in 100ms;
+    // padding: 50px 50px;
+    text-align: center;
+}
+
+.card-body {
+    padding: 4.5em 0;
+}
