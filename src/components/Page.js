@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 import styles from "./Page.module.scss";
 
-const Page = ({ children, className = null, mainClassName = null, title = "GoodData App" }) => {
+const Page = ({ children, className = null, mainClassName = null}) => {
     return (
         <div className={cx(styles.Page, className)}>
             <Helmet>
