@@ -29,7 +29,7 @@
     },
     "scripts": {
         "start": "cross-env HTTPS=true PORT=3000 react-scripts start",
-        "build": "react-scripts build",
+        "build": "cross-env REACT_APP_SET_HOSTNAME=true react-scripts build",
         "build-with-explicit-hostname": "cross-env REACT_APP_SET_HOSTNAME=true npm run build",
         "eject": "react-scripts eject",
         "test": "react-scripts test --setupFilesAfterEnv ./jest.setup.js",
