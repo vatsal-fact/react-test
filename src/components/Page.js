@@ -10,9 +10,9 @@ import styles from "./Page.module.scss";
 const Page = ({ children, className = null, mainClassName = null}) => {
     return (
         <div className={cx(styles.Page, className)}>
-            <Helmet>
+            {/* <Helmet>
                 <title>{title}</title>
-            </Helmet>
+            </Helmet> */}
             <Header />
             <main className={cx(styles.Main, mainClassName, "s-page")}>{children}</main>
             <Footer />
