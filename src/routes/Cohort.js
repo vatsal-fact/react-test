@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import moment from "moment";
 const _ = require("lodash");
 
@@ -220,13 +220,26 @@ export default class Cohort extends Component {
             <div>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <div>
-                        <button className="button-class" onClick={e => this.handleClick(6)}>
+                        <button
+                            className={"button-class " + (this.state.noOfDays === 6 ? "button-selected" : "")}
+                            onClick={e => this.handleClick(6)}
+                        >
                             7 days
                         </button>
-                        <button className="button-class" onClick={e => this.handleClick(14)}>
+                        <button
+                            className={
+                                "button-class " + (this.state.noOfDays === 14 ? "button-selected" : "")
+                            }
+                            onClick={e => this.handleClick(14)}
+                        >
                             15 days
                         </button>
-                        <button className="button-class" onClick={e => this.handleClick(29)}>
+                        <button
+                            className={
+                                "button-class " + (this.state.noOfDays === 29 ? "button-selected" : "")
+                            }
+                            onClick={e => this.handleClick(29)}
+                        >
                             30 days
                         </button>
                     </div>

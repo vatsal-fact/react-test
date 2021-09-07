@@ -56,6 +56,10 @@ h3 {
     box-shadow: 0 0 0 1px #14b2e2;
 }
 
+.button-selected {
+    box-shadow: 0 0 0 2px #14b2e2;
+}
+
 .cards {
     display: flex;
     justify-content: flex-start;
@@ -63,4 +67,19 @@ h3 {
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.header-space {
+    padding-bottom: 15px;
+    .header-nav {
+        color: #464e56;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 24px;
+
+        .link {
+            text-decoration: none;
+            color: #464e56;
+        }
+    }
 }

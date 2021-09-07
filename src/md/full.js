@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-/* THIS FILE WAS AUTO-GENERATED USING CATALOG EXPORTER; YOU SHOULD NOT EDIT THIS FILE; GENERATE TIME: 2021-09-06T05:42:20.709Z; */
+/* THIS FILE WAS AUTO-GENERATED USING CATALOG EXPORTER; YOU SHOULD NOT EDIT THIS FILE; GENERATE TIME: 2021-09-07T16:03:56.455Z; */
 // @ts-ignore ignore unused imports here if they happen (e.g. when there is no measure in the workspace)
 import { newAttribute, newMeasure, idRef } from "@gooddata/sdk-model";
 /**
@@ -178,11 +178,23 @@ export const Delivered_1 = newAttribute("label.gd_factoreal_campaign.delivered")
 
 export const Delivered_2 = newAttribute("label.gd_sms_campaign.delivered");
 /**
+ * Attribute Title: Delivered
+ * Attribute ID: attr.gd_email_journey.delivered
+ */
+
+export const Delivered_3 = newAttribute("label.gd_email_journey.delivered");
+/**
  * Attribute Title: Journey Id
  * Attribute ID: attr.gd_mobilepush_journey.journeyid
  */
 
 export const JourneyId = newAttribute("label.gd_mobilepush_journey.journeyid");
+/**
+ * Attribute Title: Journey Id
+ * Attribute ID: attr.gd_email_journey.journeyid
+ */
+
+export const JourneyId_1 = newAttribute("label.gd_email_journey.journeyid");
 /**
  * Attribute Title: Name
  * Attribute ID: attr.gd_factoreal_campaign.name
@@ -201,6 +213,12 @@ export const Name_1 = newAttribute("label.gd_sms_campaign.name");
  */
 
 export const Name_2 = newAttribute("label.gd_mobilepush_journey.name");
+/**
+ * Attribute Title: Name
+ * Attribute ID: attr.gd_email_journey.name
+ */
+
+export const Name_3 = newAttribute("label.gd_email_journey.name");
 /**
  * Attribute Title: Order Id
  * Attribute ID: attr.v_fan_store_order.orderid
@@ -232,11 +250,23 @@ export const Sent = newAttribute("label.gd_sms_campaign.sent");
 
 export const Sent_1 = newAttribute("label.gd_mobilepush_journey.sent");
 /**
+ * Attribute Title: Sent
+ * Attribute ID: attr.gd_email_journey.sent
+ */
+
+export const Sent_2 = newAttribute("label.gd_email_journey.sent");
+/**
  * Attribute Title: Status
  * Attribute ID: attr.gd_sms_campaign.status
  */
 
 export const Status = newAttribute("label.gd_sms_campaign.status");
+/**
+ * Attribute Title: Status
+ * Attribute ID: attr.gd_email_journey.status
+ */
+
+export const Status_1 = newAttribute("label.gd_email_journey.status");
 /**
  * Attribute Title: T Order
  * Attribute ID: attr.v_fan_types.torder
@@ -540,6 +570,54 @@ export const ClickOrOpen = {
    */
   ,
   Runsum: newMeasure(idRef("fact.gd_camp_engage.click_or_open", "fact"), m => m.aggregation("runsum"))
+};
+/**
+ * Fact Title: Click Or Open
+ * Fact ID: fact.gd_email_journey_engage.click_or_open
+ */
+
+export const ClickOrOpen_1 = {
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_email_journey_engage.click_or_open
+   * Fact Aggregation: sum
+   */
+  Sum: newMeasure(idRef("fact.gd_email_journey_engage.click_or_open", "fact"), m => m.aggregation("sum"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_email_journey_engage.click_or_open
+   * Fact Aggregation: avg
+   */
+  ,
+  Avg: newMeasure(idRef("fact.gd_email_journey_engage.click_or_open", "fact"), m => m.aggregation("avg"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_email_journey_engage.click_or_open
+   * Fact Aggregation: min
+   */
+  ,
+  Min: newMeasure(idRef("fact.gd_email_journey_engage.click_or_open", "fact"), m => m.aggregation("min"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_email_journey_engage.click_or_open
+   * Fact Aggregation: max
+   */
+  ,
+  Max: newMeasure(idRef("fact.gd_email_journey_engage.click_or_open", "fact"), m => m.aggregation("max"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_email_journey_engage.click_or_open
+   * Fact Aggregation: median
+   */
+  ,
+  Median: newMeasure(idRef("fact.gd_email_journey_engage.click_or_open", "fact"), m => m.aggregation("median"))
+  /**
+   * Fact Title: Click Or Open
+   * Fact ID: fact.gd_email_journey_engage.click_or_open
+   * Fact Aggregation: runsum
+   */
+  ,
+  Runsum: newMeasure(idRef("fact.gd_email_journey_engage.click_or_open", "fact"), m => m.aggregation("runsum"))
 };
 /**
  * Fact Title: Clicked
@@ -1266,7 +1344,7 @@ export const EnterpriseId_1 = {
  * Fact ID: fact.gd_email_data.journey_id
  */
 
-export const JourneyId_1 = {
+export const JourneyId_2 = {
   /**
    * Fact Title: Journey Id
    * Fact ID: fact.gd_email_data.journey_id
@@ -1554,7 +1632,7 @@ export const Score_2 = {
  * Fact ID: fact.campaign_email_day_total.sent
  */
 
-export const Sent_2 = {
+export const Sent_3 = {
   /**
    * Fact Title: Sent
    * Fact ID: fact.campaign_email_day_total.sent

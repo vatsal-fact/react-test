@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { DashboardView } from "@gooddata/sdk-ui-ext";
 import Page from "../components/Page";
-import { idRef } from "@gooddata/sdk-model";
-import { DateFilter, DateFilterHelpers } from "@gooddata/sdk-ui-filters";
 import * as Md from "../md/full";
-import { Redirect } from "react-router";
-import { NavLink } from "react-router-dom";
+// import { Execute, isEmptyResult } from "@gooddata/react-components";
+import { Execute } from "@gooddata/sdk-ui";
+import { AttributeFilterButton, DateFilter, DateFilterHelpers } from "@gooddata/sdk-ui-filters";
+import { newNegativeAttributeFilter, attributeDisplayFormRef } from "@gooddata/sdk-model";
+import Cohort from "./Cohort";
+import { NavLink, Redirect } from "react-router-dom";
 
 const dateFrom = new Date();
 dateFrom.setMonth(dateFrom.getMonth() - 1);
 
-const availableGranularities = ["GDC.time.date", "GDC.time.month", "GDC.time.quarter", "GDC.time.year"];
+// const measureTitle = "";
+const availableGranularities = ["GDC.time.date"];
 
-const defaultDateFilterOptions = {
+const dateFilterOptions = {
     allTime: {
         localIdentifier: "ALL_TIME",
         type: "allTime",
@@ -138,18 +140,18 @@ const defaultDateFilterOptions = {
     },
 };
 
-const style = { width: 300, paddingRight: "20px" };
+const EmailJourney = () => {
+    const [filter, setFilter] = useState(
+        newNegativeAttributeFilter(attributeDisplayFormRef(Md.Name_3), { uris: [] }),
+    );
 
-const dashboardRef = idRef("aaD9G8VAf9tl");
-
-const Dashboard = () => {
-    const [filterDate, setDateFilter] = useState({
-        selectedFilterOption: defaultDateFilterOptions.allTime,
+    const [filterDate, setFilterDate] = useState({
+        selectedFilterOption: dateFilterOptions.allTime,
         excludeCurrentPeriod: false,
     });
 
-    const onApplyDateFilter = (selectedFilterOption, excludeCurrentPeriod) => {
-        setDateFilter({
+    const onApply = (selectedFilterOption, excludeCurrentPeriod) => {
+        setFilterDate({
             selectedFilterOption,
             excludeCurrentPeriod,
         });
@@ -161,13 +163,6 @@ const Dashboard = () => {
         filterDate.excludeCurrentPeriod,
     );
 
-    const CustomError = ({ message }) => (
-        <p>
-            {console.log(message)}
-            <Redirect to="/login" />
-        </p>
-    );
-
     return (
         <Page>
             <div className="header-space">
@@ -175,36 +170,59 @@ const Dashboard = () => {
                     <NavLink className="link" to={"/"}>
                         Home
                     </NavLink>{" "}
-                    {">"} Fan Maturity Model
+                    {">"} Cohort Analysis
                 </span>
             </div>
             <span style={{ color: "#464e56", fontSize: "24px", fontWeight: "bold", lineHeight: "32px" }}>
-                Executive View
+                Journey Email Engagement Cohort
             </span>
             <hr style={{ border: "1px solid #dde4eb" }} />
             <div style={{ display: "flex" }}>
-                <div style={style}>
+                <div style={{ width: "200px", paddingRight: "20px" }}>
                     <DateFilter
                         excludeCurrentPeriod={filterDate.excludeCurrentPeriod}
                         selectedFilterOption={filterDate.selectedFilterOption}
-                        filterOptions={defaultDateFilterOptions}
+                        filterOptions={dateFilterOptions}
                         availableGranularities={availableGranularities}
-                        customFilterName="Selected date"
+                        customFilterName="Selected date range"
                         dateFilterMode="active"
-                        dateFormat="MM/dd/yyyy"
-                        onApply={onApplyDateFilter}
+                        onApply={onApply}
                     />
+                </div>
+                <div style={{ width: "200px", paddingRight: "20px" }}>
+                    <AttributeFilterButton filter={filter} onApply={setFilter} title="Journeys" />
                 </div>
             </div>
             <hr style={{ border: "1px solid #dde4eb" }} />
-            <DashboardView
-                dashboard={dashboardRef}
-                filters={dateFilter ? [dateFilter] : []}
-                isReadOnly
-                ErrorComponent={CustomError}
-            />
+            <Execute
+                seriesBy={[Md.ClickOrOpen_1.Sum]}
+                slicesBy={[
+                    Md.JourneyId_1,
+                    Md.DatesDate.YyyyMmDd,
+                    Md.Name_3,
+                    Md.Delivered_3,
+                    Md.DateDate.YyyyMmDd,
+                ]}
+                filters={dateFilter ? [dateFilter, filter] : [filter]}
+            >
+                {executionResult => {
+                    if (executionResult.error) {
+                        return <Redirect to="/login" />;
+                    }
+                    console.log(executionResult);
+                    return (
+                        <div>
+                            {executionResult.result !== undefined ? (
+                                <Cohort data={executionResult.result.dataView} />
+                            ) : (
+                                "Loading..."
+                            )}
+                        </div>
+                    );
+                }}
+            </Execute>
         </Page>
     );
 };
 
-export default Dashboard;
+export default EmailJourney;

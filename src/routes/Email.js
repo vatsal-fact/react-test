@@ -1,15 +1,12 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import Page from "../components/Page";
 import * as Md from "../md/full";
 // import { Execute, isEmptyResult } from "@gooddata/react-components";
-import { Execute, LoadingComponent, ErrorComponent } from "@gooddata/sdk-ui";
-import "@gooddata/sdk-ui-filters/styles/css/main.css";
-import "@gooddata/sdk-ui-charts/styles/css/main.css";
-import "@gooddata/sdk-ui-ext/styles/css/main.css";
+import { Execute } from "@gooddata/sdk-ui";
 import { AttributeFilterButton, DateFilter, DateFilterHelpers } from "@gooddata/sdk-ui-filters";
-import { newNegativeAttributeFilter, idRef, attributeDisplayFormRef } from "@gooddata/sdk-model";
+import { newNegativeAttributeFilter, attributeDisplayFormRef } from "@gooddata/sdk-model";
 import Cohort from "./Cohort";
-import { Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
 const dateFrom = new Date();
 dateFrom.setMonth(dateFrom.getMonth() - 1);
@@ -168,6 +165,14 @@ const Email = () => {
 
     return (
         <Page>
+            <div className="header-space">
+                <span className="header-nav">
+                    <NavLink className="link" to={"/"}>
+                        Home
+                    </NavLink>{" "}
+                    {">"} Cohort Analysis
+                </span>
+            </div>
             <span style={{ color: "#464e56", fontSize: "24px", fontWeight: "bold", lineHeight: "32px" }}>
                 Email Engagement Cohort
             </span>
@@ -206,7 +211,7 @@ const Email = () => {
                     }
                     return (
                         <div>
-                            {executionResult.result != undefined ? (
+                            {executionResult.result !== undefined ? (
                                 <Cohort data={executionResult.result.dataView} />
                             ) : (
                                 "Loading..."

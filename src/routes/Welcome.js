@@ -41,6 +41,9 @@ const Welcome = () => {
                 <Link style={{ textDecoration: "none" }} to="/cohort/email">
                     <Card title="Email Engagement Cohort"></Card>
                 </Link>
+                <Link style={{ textDecoration: "none" }} to="/cohort/emailjourney">
+                    <Card title="Journey Email Engagement Cohort"></Card>
+                </Link>
                 <Link style={{ textDecoration: "none" }} to="/cohort/sms">
                     <Card title="SMS Engagement Cohort"></Card>
                 </Link>

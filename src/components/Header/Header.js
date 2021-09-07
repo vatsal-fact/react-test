@@ -21,32 +21,32 @@ const ProtectedItems = ({ children }) => {
     return <>{children || null}</>;
 };
 
-const BurgerMenu = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    return (
-        <div className={styles.BurgerMenu}>
-            <button
-                className={styles.BurgerToggle}
-                onClick={() => {
-                    setIsOpen(!isOpen);
-                }}
-            >
-                ☰
-            </button>
-            {isOpen && (
-                <div className={styles.BurgerContent}>
-                    <Links />
-                    <ProtectedItems>
-                        {/* Uncomment these lines to add a workspace picker into the burger menu */}
-                        {/* <div className={styles.Centered}>
-               <WorkspacePicker />
-            </div> */}
-                    </ProtectedItems>
-                </div>
-            )}
-        </div>
-    );
-};
+// const BurgerMenu = () => {
+//     const [isOpen, setIsOpen] = useState(false);
+//     return (
+//         <div className={styles.BurgerMenu}>
+//             <button
+//                 className={styles.BurgerToggle}
+//                 onClick={() => {
+//                     setIsOpen(!isOpen);
+//                 }}
+//             >
+//                 ☰
+//             </button>
+//             {isOpen && (
+//                 <div className={styles.BurgerContent}>
+//                     <Links />
+//                     <ProtectedItems>
+//                         {/* Uncomment these lines to add a workspace picker into the burger menu */}
+//                         {/* <div className={styles.Centered}>
+//                <WorkspacePicker />
+//             </div> */}
+//                     </ProtectedItems>
+//                 </div>
+//             )}
+//         </div>
+//     );
+// };
 
 const Header = () => {
     const [windowWidth, setWindowWidth] = useState(window ? window.innerWidth : null);
@@ -74,7 +74,7 @@ const Header = () => {
         <nav className={styles.Header}>
             {isTooSmall ? (
                 <>
-                    <BurgerMenu />
+                    {/* <BurgerMenu /> */}
                     <Logo />
                 </>
             ) : (

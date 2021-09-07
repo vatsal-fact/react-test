@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
-import { DashboardView, useDashboardPdfExporter } from "@gooddata/sdk-ui-ext";
+import React, { useState } from "react";
+import { DashboardView } from "@gooddata/sdk-ui-ext";
 import Page from "../components/Page";
 import { idRef, newNegativeAttributeFilter, attributeDisplayFormRef } from "@gooddata/sdk-model";
 import { AttributeFilterButton, DateFilter, DateFilterHelpers } from "@gooddata/sdk-ui-filters";
 import * as Md from "../md/full";
-import { Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
 const dateFrom = new Date();
 dateFrom.setMonth(dateFrom.getMonth() - 1);
@@ -173,6 +173,14 @@ const Dashboard = () => {
 
     return (
         <Page>
+            <div className="header-space">
+                <span className="header-nav">
+                    <NavLink className="link" to={"/"}>
+                        Home
+                    </NavLink>{" "}
+                    {">"} Fan Maturity Model
+                </span>
+            </div>
             <span style={{ color: "#464e56", fontSize: "24px", fontWeight: "bold", lineHeight: "32px" }}>
                 Maturity Segment
             </span>
@@ -191,7 +199,7 @@ const Dashboard = () => {
                     />
                 </div>
                 <div style={style}>
-                    <AttributeFilterButton filter={filter} onApply={setFilter} title="Type" />
+                    <AttributeFilterButton filter={filter} onApply={setFilter} title="Maturity Segment" />
                 </div>
             </div>
             <hr style={{ border: "1px solid #dde4eb" }} />
