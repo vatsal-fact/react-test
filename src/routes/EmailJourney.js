@@ -146,7 +146,7 @@ const EmailJourney = () => {
     );
 
     const [filterDate, setFilterDate] = useState({
-        selectedFilterOption: dateFilterOptions.allTime,
+        selectedFilterOption: dateFilterOptions.relativePreset["GDC.time.date"][1],
         excludeCurrentPeriod: false,
     });
 
