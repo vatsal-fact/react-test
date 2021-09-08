@@ -161,12 +161,24 @@ const Dashboard = () => {
         filterDate.excludeCurrentPeriod,
     );
 
-    const CustomError = ({ message }) => (
-        <p>
-            {console.log(message)}
-            <Redirect to="/login" />
-        </p>
-    );
+    const CustomError = ({ code, message, description, icon }) => {
+        if (message !== "No data")
+            return (
+                <p>
+                    {console.log(message)}
+                    <Redirect to="/login" />
+                </p>
+            );
+        else {
+            return (
+                <div className="info-label info-no-data">
+                    <div className="info-label-icon gd-icon-filter info-no-data-icon"></div>
+                    <div className="info-no-data-label">No data</div>
+                    <div className="info-no-data-message">No data for your filter selection.</div>
+                </div>
+            );
+        }
+    };
 
     return (
         <Page>

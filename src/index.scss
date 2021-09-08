@@ -83,3 +83,26 @@ h3 {
         }
     }
 }
+
+.info-no-data {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--gd-palette-complementary-6, #94a1ad);
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    .info-no-data-icon {
+        font-size: 40px;
+    }
+    .info-no-data-label {
+        font-weight: 400;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+    .info-no-data-message {
+        margin: 3px 0px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

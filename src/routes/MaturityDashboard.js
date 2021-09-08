@@ -164,13 +164,6 @@ const Dashboard = () => {
         filterDate.excludeCurrentPeriod,
     );
 
-    const CustomError = ({ message }) => (
-        <p>
-            {console.log(message)}
-            <Redirect to="/login" />
-        </p>
-    );
-
     return (
         <Page>
             <div className="header-space">
@@ -199,7 +192,12 @@ const Dashboard = () => {
                     />
                 </div>
                 <div style={style}>
-                    <AttributeFilterButton filter={filter} onApply={setFilter} title="Maturity Segment" />
+                    <AttributeFilterButton
+                        filter={filter}
+                        onApply={setFilter}
+                        title="Maturity Segment"
+                        FilterError={() => <Redirect to="/login" />}
+                    />
                 </div>
             </div>
             <hr style={{ border: "1px solid #dde4eb" }} />
@@ -207,7 +205,6 @@ const Dashboard = () => {
                 dashboard={dashboardRef}
                 filters={dateFilter ? [dateFilter, filter] : [filter]}
                 isReadOnly
-                ErrorComponent={CustomError}
             />
         </Page>
     );

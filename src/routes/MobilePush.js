@@ -190,7 +190,12 @@ const MobilePush = () => {
                     />
                 </div>
                 <div style={{ width: "200px", paddingRight: "20px" }}>
-                    <AttributeFilterButton filter={filter} onApply={setFilter} title="Journeys" />
+                    <AttributeFilterButton
+                        filter={filter}
+                        onApply={setFilter}
+                        title="Journeys"
+                        FilterError={() => <Redirect to="/login" />}
+                    />
                 </div>
             </div>
             <hr style={{ border: "1px solid #dde4eb" }} />
